@@ -1,5 +1,5 @@
 const Chat = ({ renderPost }) => {
-  return <ul className="messanger__chat">{renderPost()}</ul>;
+  return <ul className="messenger__chat">{renderPost()}</ul>;
 };
 
 export default Chat;
