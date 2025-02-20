@@ -20,7 +20,8 @@ export const addNewPostReducer = (state = initialState, action) => {
         postText: state.textAreaValue,
         posts: [...state.posts, action.payload],
         textAreaValue: (state.textAreaValue = ""),
-      };
+
+      }
     default:
       return state;
   }

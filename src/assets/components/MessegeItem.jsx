@@ -1,28 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Selector = {
-  likeBtn: "messanger__like-btn",
-  likedBtn: "messanger__like-btn--clicked",
-};
-
-const likedToggle = (likedIcon) => {
-  return likedIcon
-    ? `${Selector.likeBtn} ${Selector.likedBtn}`
-    : `${Selector.likeBtn}`;
-};
-
-const MessageItem = ({ id, postText, likedIcon, addLike, like }) => {
+const MessegeItem = ({ id, postText }) => {
+  const [like, setLike] = useState(0);
+  const [likedIcons, setLikedIcon] = useState(false);
+  const onSetLike = () => {
+    setLikedIcon(() => !likedIcons);
+    setLike(() => like + 1);
+  };
   return (
-    <li className="messanger__item" id={id}>
-      <div className="messanger__user-avatar"></div>
-      <article className="messanger__item-article">
+    <li className="messenger__item" id={id}>
+      <div className="messenger__user-avatar"></div>
+      <article className="messenger__item-article">
         <p>{postText}</p>
-        <div className="messanger__item-control">
-          <div className="messanger__item-control-likes">
+        <div className="messenger__item-control">
+          <div className="messenger__item-control-likes">
             <button
-              className={likedToggle(likedIcon)}
-              disabled={likedIcon}
-              onClick={addLike}
+              className={
+                likedIcons
+                  ? "messenger__like-btn messenger__like-btn--clicked"
+                  : "messenger__like-btn"
+              }
+              onClick={onSetLike}
+              disabled={likedIcons}
             >
               <span>
                 <svg
@@ -52,4 +51,4 @@ const MessageItem = ({ id, postText, likedIcon, addLike, like }) => {
   );
 };
 
-export default MessageItem;
+export default MessegeItem;

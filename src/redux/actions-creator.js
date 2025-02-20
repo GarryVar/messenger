@@ -2,8 +2,9 @@ import ActionType from "./types.js";
 
 const { ADD_LIKE, UPDATE_TEXT, ADD_NEW_POST_TEXT, TOGGLE_NAV } = ActionType;
 
-export const likeActionCreator = () => ({
+export const likeActionCreator = (id) => ({
   type: ADD_LIKE,
+  payload: id
 });
 
 export const updateTextActionCreator = (value = "") => ({

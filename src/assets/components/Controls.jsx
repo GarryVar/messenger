@@ -11,7 +11,7 @@ const Controls = ({ myref, updateTextValue, textAreaValue, addNewPost }) => {
     updateTextValue(myRef.current.value);
   };
   return (
-    <div className="messanger__control">
+    <div className="messenger__control">
       <input
         type="text"
         ref={myRef}
@@ -19,9 +19,9 @@ const Controls = ({ myref, updateTextValue, textAreaValue, addNewPost }) => {
         value={textAreaValue}
         placeholder="Сообщение"
       ></input>
-      <button>
-        <span></span>
-      </button>
+      {/*<button>*/}
+      {/*  <span></span>*/}
+      {/*</button>*/}
       <button onClick={onAddNewPost}>
         <span>
           <svg
