@@ -1,0 +1,36 @@
+.control {
+    display: flex;
+    align-items: center ;
+    justify-self: flex-end;
+    flex-shrink: 0;
+    gap: 10px;
+    padding: 10px;
+    width: 100%;
+}
+
+.control input {
+    height: 40px;
+    flex-grow: 1;
+    padding-left: 10px;
+    border: none;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+.control button {
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: transparent;
+}
+
+.control button svg {
+    fill: #333;
+}
+
+.control button svg:focus,
+.control button svg:hover {
+    fill: var(--brand);
+}
+

@@ -1,19 +1,21 @@
 import React from "react";
 import { connect } from "react-redux";
 import { v4 as uuidv4 } from "uuid";
-import "./Messenger.css";
-import Header from "./Header.jsx";
-import Chat from "./Chat.jsx";
+import "../Messenger.css";
+import styles from "./Messanger.module.css";
+
+import Header from "../Header/Header.jsx";
+import Chat from "../Chat/Chat.jsx";
 import {
   addNePostActionCreator,
-  likeActionCreator,
   toggleNavMenuActionCreator,
   updateTextActionCreator,
-} from "../../redux/actions-creator.js";
-import Controls from "./Controls.jsx";
+} from "../../../redux/actions-creator.js";
+import Controls from "../Controls/Controls.jsx";
 import { HashRouter, Routes, Route } from "react-router-dom";
-import StartPage from "./StartPage.jsx";
-import MessegeItem from "./MessegeItem.jsx";
+
+import StartPage from "../StartPage.jsx";
+import MessegeItem from "../Nav/NavList/MessegeItem.jsx";
 
 const messenger = ({
   textAreaValue,
@@ -32,10 +34,10 @@ const messenger = ({
   return (
     <HashRouter>
       <div className="container">
-        <div className="messenger">
-          <div className="messenger__inner">
+        <div className={styles.messenger}>
+          <div className={styles.inner}>
             <Header toggleNavMenu={toggleNavMenu} hidden={hidden} />
-            <main>
+            <main className={styles.main}>
               <Routes>
                 <Route path="/" element={<StartPage />} />
                 <Route
@@ -58,10 +60,7 @@ const messenger = ({
   );
 };
 
-let mapStateToProps = ({
-  addNewPostReducer: { textAreaValue, posts },
-  toggleNavReducer: { hidden },
-}) => {
+let mapStateToProps = ({ addNewPostReducer: { textAreaValue, posts } }) => {
   return {
     textAreaValue: textAreaValue,
     postText: textAreaValue,
