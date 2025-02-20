@@ -2,9 +2,9 @@ import Nav from "./Nav.jsx";
 
 const Header = ({ toggleNavMenu, hidden }) => {
   return (
-    <header className="messanger__header">
-      <div className="messanger__header-inner">
-        <button className="messanger__nav-btn" onClick={toggleNavMenu}>
+    <header className="messenger__header">
+      <div className="messenger__header-inner">
+        <button className="messenger__nav-btn" onClick={toggleNavMenu} hidden>
           <span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
