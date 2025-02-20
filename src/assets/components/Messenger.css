@@ -1,4 +1,4 @@
-.messanger {
+.messenger {
     max-width: 840px;
     margin: auto;
     border-radius: 10px;
@@ -9,19 +9,19 @@
     /*border: 1px solid lightgray;*/
 }
 
-.messanger__inner {
+.messenger__inner {
     display: flex;
     flex-direction: column;
     overflow: hidden;
     height: 100%;
 }
 
-.messanger__header {
+.messenger__header {
     flex-shrink: 0;
     height: 60px;
 }
 
-.messanger__header-inner {
+.messenger__header-inner {
     position: relative;
     padding: 15px;
     display: flex;
@@ -29,11 +29,15 @@
     height: inherit;
 }
 
-.messanger__nav-btn {
+.messenger__nav-btn {
     fill: #333;
 }
 
-.messanger__nav {
+.messenger__nav {
+    background-color: lightgrey;
+}
+
+.messenger__nav--mobile {
     position: absolute;
     left: 0;
     top: 0;
@@ -46,43 +50,78 @@
     transition: left ease-in .4s;
 }
 
-.messanger__nav--hidden {
+.messenger__nav--hidden {
     left: -110%;
     transition: left ease-out .4s;
 }
 
-.messanger__nav-btn {
+.messenger__nav-btn {
     width: 30px;
     height: 20px;
 }
 
-.messanger__chat {
+
+.messenger__nav-list {
+    display: flex;
+    gap: 10px;
+    background-color: white;
+}
+
+
+.messenger__nav--mobile .messenger__nav-list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
+}
+
+
+.messenger__nav-list li,
+.messenger__nav-list a {
+    display: flex;
+}
+
+.messenger__nav-list a {
+    font-size: 18px;
+    font-weight: 500;
+
+    color: #333;
+    border-bottom: 1px solid #333;
+}
+
+
+
+.messenger__start-page,
+.messenger__chat{
     padding: 10px;
     background-color: #fdfdfd;
-
     height: inherit;
     overflow: auto;
 
-    background-image: url("./images/bg.jpg");
+    background-color: #dcdcdc;
+}
+
+.messenger__chat {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    background-image: url(/src/assets/components/images/bg.jpg);
     background-size: cover;
     background-attachment: fixed;
 }
 
-.messanger__item {
+.messenger__item {
     display: flex;
     gap: 10px;
     width: 100%;
     /*align-self: end;*/
 }
 
-/*.messanger__item:nth-child(2n) article {*/
+/*.messenger__item:nth-child(2n) article {*/
 /*    background-color: red;*/
 /*}*/
 
-.messanger__user-avatar {
+.messenger__user-avatar {
     flex-shrink: 0;
     width: 30px;
     height: 30px;
@@ -90,16 +129,18 @@
     background-color: var(--brand);
 }
 
-.messanger__item-article {
+.messenger__item-article {
     display: flex;
     flex-direction: column;
     padding: 10px;
     gap: 5px;
     border-radius: 5px;
     background-color: #f3faff61;
+
+    max-width: 70%;
 }
 
-.messanger__item-article p {
+.messenger__item-article p {
     font-size: 16px;
     text-align: left;
     margin: 0;
@@ -110,51 +151,52 @@
     overflow: auto;
 }
 
-.messanger__control {
+.messenger__control {
     display: flex;
     align-items: center ;
     justify-self: flex-end;
     flex-shrink: 0;
     gap: 10px;
     padding: 10px;
+    width: 100%;
 }
 
-.messanger__item-control {
+.messenger__item-control {
     display: flex;
     flex-direction: row-reverse;
     font-size: 12px;
 }
 
-.messanger__item-control-likes {
+.messenger__item-control-likes {
     display: flex;
     gap: 5px;
     align-items: center;
 }
 
-.messanger__like-btn--clicked.messanger__like-btn--clicked svg {
+.messenger__like-btn--clicked.messenger__like-btn--clicked svg {
     fill: var(--brand);
 }
 
-.messanger__item-control-likes svg {
+.messenger__item-control-likes svg {
     fill: white;
 }
 
 
-.messanger__item-control-likes svg:active {
+.messenger__item-control-likes svg:active {
     transform: scale(1.2);
 }
 
-.messanger__like-btn {
+.messenger__like-btn {
     width: 15px;
     height: 15px;
 }
 
-.messanger__like-btn span {
+.messenger__like-btn span {
     display: block;
     height: inherit;
 }
 
-.messanger__control input {
+.messenger__control input {
     height: 40px;
     flex-grow: 1;
     padding-left: 10px;
@@ -163,7 +205,7 @@
     font-size: 16px;
 }
 
-.messanger__control button {
+.messenger__control button {
     padding: 0;
     width: 20px;
     height: 20px;
@@ -171,17 +213,21 @@
     background-color: transparent;
 }
 
-.messanger__control button svg {
+.messenger__control button svg {
     fill: #333;
 }
 
-.messanger__control button svg:focus,
-.messanger__control button svg:hover {
+.messenger__control button svg:focus,
+.messenger__control button svg:hover {
     fill: var(--brand);
 }
 
 @media (min-width: 640px) {
-    .messanger__nav {
+    .messenger__nav {
         width: 50%;
+    }
+
+    .messenger__item-article {
+        width: 100%;
     }
 }
