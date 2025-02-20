@@ -1,15 +1,9 @@
-import NavList from "./navList.jsx";
+import NavList from "./NavList/NavList.jsx";
 
-const Nav = ({ toggleNavMenu, hidden }) => {
+const Nav = () => {
   return (
-    <nav
-      className={
-        hidden
-          ? "messenger__nav messenger__nav--mobile"
-          : "messenger__nav messenger__nav--hidden"
-      }
-    >
-      <button onClick={toggleNavMenu} hidden>
+    <nav>
+      <button hidden>
         <span>
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -1,5 +1,5 @@
 import "./App.css";
-import Messanger from "./assets/components/Messanger.jsx";
+import Messanger from "./assets/components/Messenger/Messanger.jsx";
 
 function App() {
   return (

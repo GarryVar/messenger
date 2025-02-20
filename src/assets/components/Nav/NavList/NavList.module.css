@@ -1,0 +1,79 @@
+.navlist {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.item {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    /*align-self: end;*/
+}
+
+.userAvatar {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--brand);
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 5px;
+    border-radius: 5px;
+    background-color: #f3faff61;
+
+    max-width: 70%;
+}
+
+.article p {
+    font-size: 16px;
+    text-align: left;
+    margin: 0;
+    word-break: break-all;
+    color: black;
+
+    max-height: 200px;
+    overflow: auto;
+}
+
+.control {
+    display: flex;
+    flex-direction: row-reverse;
+    font-size: 12px;
+}
+
+.controlLikes {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.likeBtn {
+    width: 15px;
+    height: 15px;
+}
+
+.likeBtn span {
+    display: block;
+    height: inherit;
+}
+
+.likeBtn svg,
+.likes svg{
+    fill: white;
+}
+
+.likeBtnClicked.likeBtnClicked svg {
+    fill: var(--brand);
+}
+
+
+
+.likes svg:active {
+    transform: scale(1.2);
+}

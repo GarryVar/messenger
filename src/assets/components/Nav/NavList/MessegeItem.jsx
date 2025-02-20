@@ -1,24 +1,26 @@
 import React, { useState } from "react";
+import styles from "./NavList.module.css";
 
 const MessegeItem = ({ id, postText }) => {
   const [like, setLike] = useState(0);
   const [likedIcons, setLikedIcon] = useState(false);
+
   const onSetLike = () => {
     setLikedIcon(() => !likedIcons);
     setLike(() => like + 1);
   };
   return (
-    <li className="messenger__item" id={id}>
-      <div className="messenger__user-avatar"></div>
-      <article className="messenger__item-article">
+    <li className={styles.item} id={id}>
+      <div className={styles.userAvatar}></div>
+      <article className={styles.article}>
         <p>{postText}</p>
-        <div className="messenger__item-control">
-          <div className="messenger__item-control-likes">
+        <div className={styles.control}>
+          <div className={styles.controlLikes}>
             <button
               className={
                 likedIcons
-                  ? "messenger__like-btn messenger__like-btn--clicked"
-                  : "messenger__like-btn"
+                  ? `${styles.likeBtn} ${styles.likeBtnClicked}`
+                  : `${styles.likeBtn}`
               }
               onClick={onSetLike}
               disabled={likedIcons}

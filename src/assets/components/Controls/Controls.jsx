@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./Controls.module.css";
 
 const myRef = React.createRef();
 
@@ -11,7 +12,7 @@ const Controls = ({ myref, updateTextValue, textAreaValue, addNewPost }) => {
     updateTextValue(myRef.current.value);
   };
   return (
-    <div className="messenger__control">
+    <div className={styles.control}>
       <input
         type="text"
         ref={myRef}
