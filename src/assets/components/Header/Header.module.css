@@ -1,0 +1,12 @@
+.header {
+    flex-shrink: 0;
+    height: 60px;
+}
+
+.inner {
+    position: relative;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    height: inherit;
+}

@@ -1,0 +1,15 @@
+.chat {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    padding: 10px;
+    height: inherit;
+    overflow: auto;
+
+    background-image: url("bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+
+
+}
