@@ -17,7 +17,7 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import StartPage from "../StartPage.jsx";
 import MessegeItem from "../Nav/NavList/MessegeItem.jsx";
 
-const messenger = ({
+const Messenger = ({
   textAreaValue,
   updateTextValue,
   addNewPost,
@@ -78,11 +78,11 @@ let mapDispatchToProps = (dispatch) => {
           addNePostActionCreator({
             postText: text,
             id: uuidv4(),
-          }),
+          })
         );
       }
     },
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(messenger);
+export default connect(mapStateToProps, mapDispatchToProps)(Messenger);
